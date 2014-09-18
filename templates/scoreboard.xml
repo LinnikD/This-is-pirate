@@ -1,0 +1,21 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+    <div class="window window_scoreboard">
+    	<div class="window__table">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+                <fest:for iterate="json.scores" index="i">
+                    <tr>
+                        <td><fest:value>json.scores[i].name</fest:value></td>
+                        <td><fest:value>json.scores[i].score</fest:value></td>
+                    </tr>
+                </fest:for>
+            </table>
+        </div>
+    </div>
+    <div class="window__button window__button_scoreboard">
+        <a href="#" class="button button_back button_right" data-audio="Standart">Back</a>
+    </div>
+</fest:template>

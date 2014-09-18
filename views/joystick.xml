@@ -1,0 +1,23 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+<fest:doctype>html</fest:doctype>
+ <?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<title>joystick</title>
+</head>
+<body>
+	<div class="page page_joystick">
+		<div style="margin:0 auto; text-align: center;" >
+		<div id="message"></div>
+		<script data-main="/js/mobile/joystick" src="/js/lib/require.js"></script>
+		</div>
+		<div class="page__content">
+			<canvas height='250' width='1024' class="page__canvas" id="rows">
+			</canvas>
+		</div>
+	</div>
+</body>
+</html>
+</fest:template>

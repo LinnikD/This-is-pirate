@@ -1,0 +1,10 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class="window window_main">
+		<div class="window_button">
+			<!--<a href="#game"  class="button button_start-game" data-audio="Start">Start Game</a>-->
+			<a href="#console"  class="button button_start-game" data-audio="Start">Start Game</a>
+			<a href="#scoreboard" class="button button_scoreboard" data-audio="Standart">Scoreboard</a>
+
+		</div>
+	</div> 
+</fest:template>

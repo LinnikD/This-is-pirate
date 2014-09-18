@@ -1,0 +1,173 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+<fest:doctype>html</fest:doctype>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			<fest:value>json.title</fest:value>
+		</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link href='//fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC' rel='stylesheet' />
+	</head>
+	<body>
+		<div class="page">
+			<div id="indicator" class="button indicator_style">
+					Индикатор загрузки
+                	<div id="indicator__progress-bar" style="width:{json.progress}"></div>
+                	<div id="indicator__percent" ><fest:value>
+                    	json.progress
+                	</fest:value></div>
+            	</div>
+			<div class="page__head-line">
+			</div>			
+			<div class="page__window">
+				
+    			<audio id="Start">
+        			<source src="start.wav"/>
+    			</audio>
+    			<audio id="Standart">
+        			<source src="standartkey.wav"/>
+    			</audio>
+				<div id="page"></div>
+				<fest:if test="json.development">
+					<script>
+						console.log("Начало загузки");
+	            		var urlArray = [
+	                	    'img/715.gif',
+	                	    'img/background.jpg',
+	                	    'img/background_scoreboard.jpg',
+	                	    'img/button_bg.png',
+	                	    'img/GoldCoin2.png',
+	                	    'img/joystick_background.png',
+	                	    'img/main-background.jpg',
+	                	    'img/paper.png',
+	                	    'img/game/heart.png',
+	                	    'img/game/isle_1.png',
+	                	    'img/game/sea.jpg',
+	                	    'img/game/ship.png',
+	                	    'img/game/ship_left.png',
+	                	    'img/game/ship_right.png'
+	                	]
+
+	                	var loadedSize = urlArray.length;
+	                	var progress = 0;
+	                	var percent_stap = Math.round(100 / urlArray.length);
+
+	                	function getImages (url) {
+	                	    if (url !== undefined) {
+	                	        var method = 'GET';
+		            	        var xhr = new XMLHttpRequest();
+	                	
+	                	        xhr.onreadystatechange = function() {
+	                            	if (this.readyState == 4) {
+	                            		progress += percent_stap
+	                            		document.getElementById('indicator__percent').innerHTML = progress + '%';
+	                            		document.getElementById('indicator__progress-bar').style.width = progress + '%';
+	                                	//document.head.innerHTML += '&lt;IMG src=' + url + ' style="display:none"&gt;';
+	                                	//getImages(urlArray.pop());
+	                                	console.log(url + " " + progress + '%');
+	                                	console.log("Загрузка " + url + " завершена");
+		                            }
+		                        };
+		                        xhr.open(method, url, true);
+		                        xhr.send();
+		                        return true;
+		                    } else {
+		                        //document.getElementById('indicator__percent').innerHTML = "100%";
+		                        //document.getElementById('indicator__progress-bar').style.width = "100%";
+
+
+	                        	setTimeout(function() {
+		                            document.getElementById('indicator').style.display = 'none';
+		                        }, 1500);
+		                        return false;
+		                    }
+		                }
+		                a = true;
+		                while (a) {
+		                	a = getImages(urlArray.pop());
+		                }
+		                console.time('loadScript');            
+		                
+		    		</script>
+
+		    		<script data-main="js/main" src="js/lib/require.js"></script>					
+				</fest:if>
+
+				<fest:if test="!json.development">
+					<script>console.time('loadScript');</script>
+					<script>
+						console.log("Начало загузки");
+	            		var urlArray = [
+	                	    'img/715.gif',
+	                	    'img/background.jpg',
+	                	    'img/background_scoreboard.jpg',
+	                	    'img/button_bg.png',
+	                	    'img/GoldCoin2.png',
+	                	    'img/joystick_background.png',
+	                	    'img/main-background.jpg',
+	                	    'img/paper.png',
+	                	    'img/game/heart.png',
+	                	    'img/game/isle_1.png',
+	                	    'img/game/sea.jpg',
+	                	    'img/game/ship.png',
+	                	    'img/game/ship_left.png',
+	                	    'img/game/ship_right.png'
+	                	]
+
+	                	var loadedSize = urlArray.length;
+	                	var progress = 0;
+	                	var percent_stap = Math.round(100 / urlArray.length);
+
+	                	function getImages (url) {
+	                	    if (url !== undefined) {
+	                	        var method = 'GET';
+		            	        var xhr = new XMLHttpRequest();
+	                	
+	                	        xhr.onreadystatechange = function() {
+	                            	if (this.readyState == 4) {
+	                            		progress += percent_stap
+	                            		document.getElementById('indicator__percent').innerHTML = progress + '%';
+	                            		document.getElementById('indicator__progress-bar').style.width = progress + '%';
+	                                	//document.head.innerHTML += '&lt;IMG src=' + url + ' style="display:none"&gt;';
+	                                	//getImages(urlArray.pop());
+	                                	console.log(url + " " + progress + '%');
+	                                	console.log("Загрузка " + url + " завершена");
+		                            }
+		                        };
+		                        xhr.open(method, url, true);
+		                        xhr.send();
+		                        return true;
+		                    } else {
+		                        //document.getElementById('indicator__percent').innerHTML = "100%";
+		                        //document.getElementById('indicator__progress-bar').style.width = "100%";
+
+
+	                        	setTimeout(function() {
+		                            document.getElementById('indicator').style.display = 'none';
+		                        }, 1500);
+		                        return false;
+		                    }
+		                }
+		                a = true;
+		                while (a) {
+		                	a = getImages(urlArray.pop());
+		                }
+		                console.time('loadScript');            
+		                
+		    		</script>
+					<script src="js/build.min.js"></script>
+					<script>                    
+						require(['main'], function() {
+						console.timeEnd('loadScript');
+						});
+					</script>
+				</fest:if>
+			</div>
+			<div class="page__footer">
+			</div>
+		</div>
+	</body>
+</html>
+</fest:template>

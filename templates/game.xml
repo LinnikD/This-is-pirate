@@ -1,0 +1,10 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class="window window_game">
+		<div class="window__canvas">
+			<canvas id="game"></canvas>
+		</div>
+		<div class="window__button window__button_game">
+
+		</div>	
+	</div>
+</fest:template>

@@ -1,0 +1,18 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class="window window_gameover">
+		<div class="window__text">
+			<h4>Ваш Счет: </h4>
+			<p><fest:value>json.score</fest:value></p>
+		</div>
+		<form action="/scores" method="post" class="gameover__form">
+			<div class="window__save">
+				<input type="text" class="window__save_input" onfocus="this.style.border = 'solid 2px #00dd00'" maxlength="30" placeholder="Введите имя" name="name"/>
+			</div>
+			<input class="gameover__score" type="hidden" value="{json.score}"  name="score" />
+			<div class="window__button window__button_gameover">
+				<input type="submit" class="button button_back button_save" data-audio="Standart" value="Схоронить!" name="name" />
+			</div>
+		</form>
+		<p class="gameover__status"></p>
+	</div>
+</fest:template>
